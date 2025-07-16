@@ -4,12 +4,13 @@ import { useCartStore } from "@/app/utils/cart-store";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "./Button";
+import { Button } from "./shared/Button";
 import {
   ShoppingCartIcon,
   Bars3Icon,
   XMarkIcon,
   UserIcon,
+  MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 
 export const Navbar = () => {
@@ -33,7 +34,7 @@ export const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow">
-      <div className="container mx-auto flex items-center justify-between px-4 py-4">
+      <div className="mx-auto flex items-center justify-between px-4 md:px-6 py-4">
         {/* Logo */}
         <Link href="/">
           <Image
@@ -46,7 +47,7 @@ export const Navbar = () => {
         </Link>
 
         {/* navbar items */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex md:space-x-4 lg:space-x-6">
           <Link href="/" className="hover:text-blue-600">
             Home
           </Link>
@@ -59,6 +60,16 @@ export const Navbar = () => {
           <Link href="/admin" className="hover:text-blue-600">
             Admin
           </Link>
+        </div>
+
+        {/* Search bar */}
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search products..."
+            className="w-48 sm:w-70 md:w-75 lg:w-120 pl-10 pr-4 py-1 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
+          />
+          <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
         </div>
 
         {/* shooping cart icon */}
@@ -78,7 +89,7 @@ export const Navbar = () => {
             <UserIcon className="h-6 w-6" />
           </Link>
 
-          {/* //onmclick set open to opposite it is */}
+          {/* //onclick set open to opposite it is */}
           <Button
             // variant="ghost"
             onClick={() => setMobileOpen((prev) => !prev)}
