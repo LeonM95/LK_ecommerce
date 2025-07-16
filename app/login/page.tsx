@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { Container } from "@/components/shared/Container";
 import { Button } from "@/components/shared/Button";
 import { useRouter } from "next/navigation";
 
@@ -22,7 +21,7 @@ export default function Login() {
 
   return (
     <div>
-      <Container className="mt-16 bg-white border border-gray-200 rounded-3xl shadow-lg p-8 max-w-md mx-auto">
+      <div className="div mt-16 bg-white border border-gray-200 rounded-3xl shadow-lg p-8 max-w-md mx-auto">
         <h1 className="text-center mb-8">LOGIN</h1>
         <form action="">
           <label htmlFor="">Email:</label>
@@ -46,7 +45,7 @@ export default function Login() {
             Login
           </Button>
         </form>
-      </Container>
+      </div>
     </div>
   );
 }

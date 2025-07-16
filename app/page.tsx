@@ -1,7 +1,5 @@
-import Image from "next/image";
-import Login from "./login/page";
-import Layout from "./layout";
+import ProductsPage from "./products/page";
 
 export default function Home() {
-  return;
+  return <ProductsPage />;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function page() {
+export default function ProductsPage() {
   return (
-    <div>
+    <div className="container mx-auto my-8 border border-gray-300">
       <h1>Products page</h1>
     </div>
   );
